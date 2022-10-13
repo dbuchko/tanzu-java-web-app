@@ -7,8 +7,13 @@ metadata:
     app.kubernetes.io/part-of: tanzu-java-web-app
     apps.tanzu.vmware.com/has-tests: true
 spec:
+  params:
+  - name: annotations
+    value:
+      autoscaling.knative.dev/minScale: "1"
   source:
     git:
-      url: https://github.com/dbuchko/tanzu-java-web-app
       ref:
         branch: main
+      url: https://github.com/dbuchko
+    subPath: tanzu-java-web-app
